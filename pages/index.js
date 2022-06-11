@@ -1,7 +1,4 @@
 import Head from "next/head";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
@@ -31,30 +28,25 @@ export default function Home() {
           </div>
         </div>
 
-        <div>
+        <div className="text-gray-500 tracking-wide">
           <a
-            className="text-gray-400 hover:text-gray-600"
+            className="mr-4 hover:text-gray-600"
             href="https://github.com/lrnxie"
             target="_blank"
             rel="noreferrer"
           >
-            <FontAwesomeIcon className="mr-6 text-2xl" icon={faGithub} />
+            GitHub
           </a>
           <a
-            className="text-gray-400 hover:text-gray-600"
+            className="mr-4 hover:text-gray-600"
             href="https://twitter.com/lrnxie"
             target="_blank"
             rel="noreferrer"
           >
-            <FontAwesomeIcon className="mr-6 text-2xl" icon={faTwitter} />
+            Twitter
           </a>
-          <a
-            className="text-gray-400 hover:text-gray-600"
-            href="mailto:lrnxie@gmail.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon className="mr-6 text-2xl" icon={faEnvelope} />
+          <a className="hover:text-gray-600" href="mailto:lrnxie@gmail.com">
+            Email
           </a>
         </div>
       </div>
