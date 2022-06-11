@@ -35,6 +35,7 @@ export default function Home() {
             className="text-gray-400 hover:text-gray-600"
             href="https://github.com/lrnxie"
             target="_blank"
+            rel="noreferrer"
           >
             <FontAwesomeIcon className="mr-6 text-2xl" icon={faGithub} />
           </a>
@@ -42,6 +43,7 @@ export default function Home() {
             className="text-gray-400 hover:text-gray-600"
             href="https://twitter.com/lrnxie"
             target="_blank"
+            rel="noreferrer"
           >
             <FontAwesomeIcon className="mr-6 text-2xl" icon={faTwitter} />
           </a>
@@ -49,6 +51,7 @@ export default function Home() {
             className="text-gray-400 hover:text-gray-600"
             href="mailto:lrnxie@gmail.com"
             target="_blank"
+            rel="noreferrer"
           >
             <FontAwesomeIcon className="mr-6 text-2xl" icon={faEnvelope} />
           </a>
