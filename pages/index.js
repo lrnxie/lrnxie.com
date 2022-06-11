@@ -13,9 +13,10 @@ export default function Home() {
       <div>
         <div className="mb-6">
           <h1 className="text-4xl font-light tracking-wide mb-4">
-            Hi, I'm{" "}
+            Hi, I&rsquo;m{" "}
             <span className="font-bold tracking-normal">Lauren Xie</span>
           </h1>
+
           <h2 className="text-lg text-gray-700 mb-7">
             <span className="font-semibold">Web Developer</span> based in
             Toronto, Canada
