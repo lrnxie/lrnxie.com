@@ -1,49 +1,43 @@
 import Layout from "../components/Layout";
 
 export default function Home() {
+  const links = [
+    {
+      name: "GitHub",
+      url: "https://github.com/lrnxie",
+    },
+    {
+      name: "Twitter",
+      url: "https://twitter.com/lrnxie",
+    },
+  ];
   return (
     <Layout>
       <div>
-        <div className="mb-6">
-          <h1 className="text-4xl font-light tracking-wide mb-4">
-            Hi, I&rsquo;m{" "}
-            <span className="font-bold tracking-normal">Lauren Xie</span>
-          </h1>
+        <h1 className="text-3xl font-bold mb-6">Lauren Xie</h1>
 
-          <h2 className="text-lg text-gray-700 dark:text-slate-200 mb-7">
-            <span className="font-semibold">Web Developer</span> based in
-            Toronto, Canada
-          </h2>
+        <p className="max-w-xl mb-6">
+          {/* Hi, I&rsquo;m Lauren, a{" "} */}
+          <span className="font-semibold">Frontend Developer</span> based in
+          Toronto 🇨🇦
+        </p>
 
-          <div className="text-gray-600 dark:text-slate-300">
-            <p className="font-medium mb-2">🛠 Site is under construction 🛠</p>
-            <p>
-              In the meantime, feel free to reach out to me via the contacts
-              below.
-            </p>
-          </div>
-        </div>
+        <div className="flex text-neutral-500 tracking-wide dark:text-neutral-400">
+          {links.map((link) => (
+            <a
+              key={link.name}
+              className="mr-4 hover:text-neutral-700 dark:hover:text-neutral-300"
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {link.name}
+            </a>
+          ))}
 
-        <div className="text-gray-500 tracking-wide dark:text-slate-400">
           <a
-            className="mr-4 hover:text-gray-700 dark:hover:text-slate-300"
-            href="https://github.com/lrnxie"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-          <a
-            className="mr-4 hover:text-gray-700 dark:hover:text-slate-300"
-            href="https://twitter.com/lrnxie"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Twitter
-          </a>
-          <a
-            className="hover:text-gray-700 dark:hover:text-slate-300"
-            href="mailto:lrnxie@gmail.com"
+            className="hover:text-neutral-700 dark:hover:text-neutral-300"
+            href="mailto:hello@lrnxie.com"
           >
             Email
           </a>
