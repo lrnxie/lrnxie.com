@@ -41,7 +41,7 @@ export default function Container({ children }) {
   if (!mounted) return null;
 
   return (
-    <div className="w-full h-screen max-w-2xl mx-auto py-5 px-4">
+    <div className="w-full max-h-screen max-w-2xl mx-auto py-5 px-4">
       <Head>
         <title>Lauren Xie</title>
       </Head>
