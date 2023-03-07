@@ -48,7 +48,7 @@ export default function Container({ children }) {
 
       <nav className="flex justify-end pt-5 pb-10">
         <button
-          className="w-9 h-9 rounded-lg bg-neutral-800 dark:bg-neutral-100"
+          className="w-9 h-9 rounded-lg border border-neutral-300 dark:border-neutral-600"
           onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
         >
           {resolvedTheme === "dark" ? <SunIcon /> : <MoonIcon />}
