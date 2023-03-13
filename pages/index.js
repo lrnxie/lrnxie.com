@@ -35,17 +35,17 @@ export default function Home() {
             newTab={false}
           />
 
-          {!isLoading && (
-            <ListItem
-              icon={<SpotifyIcon />}
-              link={!error && data?.isPlaying ? data.trackUrl : null}
-              title={
-                !error && data?.isPlaying
-                  ? `${data.title} - ${data.artist}`
-                  : "Not Playing"
-              }
-            />
-          )}
+          <ListItem
+            icon={<SpotifyIcon />}
+            link={!error && data?.isPlaying ? data.trackUrl : null}
+            title={
+              isLoading
+                ? "Loading Spotify now playing..."
+                : !error && data?.isPlaying
+                ? `${data.title} - ${data.artist}`
+                : "Not Playing"
+            }
+          />
         </div>
       </div>
     </Layout>
