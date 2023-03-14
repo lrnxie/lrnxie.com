@@ -5,7 +5,7 @@ export default function ListItem({ icon, link, title, newTab = true }) {
         {icon}
       </div>
 
-      <div className="flex-1 truncate">
+      <div className="flex-1 truncate text-neutral-900 dark:text-neutral-100">
         {link ? (
           <a
             className="font-semibold border-b border-indigo-500 hover:border-b-2 transition-all ease-in-out duration-100"
@@ -16,7 +16,7 @@ export default function ListItem({ icon, link, title, newTab = true }) {
             {title}
           </a>
         ) : (
-          <p>{title}</p>
+          <p className="font-medium cursor-default">{title}</p>
         )}
       </div>
     </div>

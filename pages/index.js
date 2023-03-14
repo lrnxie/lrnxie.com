@@ -15,7 +15,7 @@ export default function Home() {
       <div>
         <h1 className="text-3xl font-bold cursor-default mb-8">Lauren Xie</h1>
 
-        <div className="space-y-4 font-medium cursor-default text-neutral-900 dark:text-neutral-100">
+        <div className="space-y-4">
           <ListItem icon={<JobIcon />} title="Frontend Developer" />
           <ListItem icon={<LocationIcon />} title="Toronto 🇨🇦" />
           <ListItem
