@@ -48,16 +48,16 @@ export default function Layout({ children }: { children: ReactNode }) {
         <title>Lauren Xie</title>
       </Head>
 
-      <nav className="flex justify-end pt-5 pb-10">
+      <div className="flex justify-end pt-5 pb-10">
         <button
           className="w-9 h-9 rounded-lg border border-neutral-300 dark:border-neutral-600"
           onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
         >
           {resolvedTheme === "dark" ? <SunIcon /> : <MoonIcon />}
         </button>
-      </nav>
+      </div>
 
-      <main className="flex flex-col justify-center">{children}</main>
+      <div className="flex flex-col justify-center">{children}</div>
     </div>
   );
 }
