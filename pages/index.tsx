@@ -3,8 +3,11 @@ import useSWR from "swr";
 import Layout from "../components/Layout";
 import ListItem from "../components/ListItem";
 
-async function fetcher(url) {
-  return fetch(url).then((res) => res.json());
+async function fetcher(endpoint: string) {
+  const response = await fetch(endpoint);
+  const json = await response.json();
+
+  return json;
 }
 
 export default function Home() {
@@ -15,7 +18,7 @@ export default function Home() {
       <div>
         <h1 className="text-3xl font-bold cursor-default mb-8">Lauren Xie</h1>
 
-        <div className="space-y-4">
+        <ul className="space-y-4">
           <ListItem icon={<JobIcon />} title="Frontend Developer" />
           <ListItem icon={<LocationIcon />} title="Toronto 🇨🇦" />
           <ListItem
@@ -46,7 +49,7 @@ export default function Home() {
                 : "Not Playing"
             }
           />
-        </div>
+        </ul>
       </div>
     </Layout>
   );
