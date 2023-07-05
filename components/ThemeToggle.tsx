@@ -1,6 +1,27 @@
-import Head from "next/head";
-import { useState, useEffect, ReactNode } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+
+export default function ThemeToggle() {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return (
+    <div className="flex justify-end pt-5 pb-10">
+      <button
+        className="w-9 h-9 rounded-lg border border-neutral-300 dark:border-neutral-600"
+        onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      >
+        {resolvedTheme === "dark" ? <SunIcon /> : <MoonIcon />}
+      </button>
+    </div>
+  );
+}
 
 function SunIcon() {
   return (
@@ -29,35 +50,5 @@ function MoonIcon() {
         clipRule="evenodd"
       />
     </svg>
-  );
-}
-
-export default function Layout({ children }: { children: ReactNode }) {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
-  return (
-    <div className="w-full max-h-screen max-w-2xl mx-auto py-5 px-4">
-      <Head>
-        <title>Lauren Xie</title>
-      </Head>
-
-      <div className="flex justify-end pt-5 pb-10">
-        <button
-          className="w-9 h-9 rounded-lg border border-neutral-300 dark:border-neutral-600"
-          onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-        >
-          {resolvedTheme === "dark" ? <SunIcon /> : <MoonIcon />}
-        </button>
-      </div>
-
-      <div className="flex flex-col justify-center">{children}</div>
-    </div>
   );
 }

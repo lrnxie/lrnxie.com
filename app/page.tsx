@@ -1,7 +1,8 @@
-import useSWR from "swr";
+"use client";
 
-import Layout from "../components/Layout";
+import useSWR from "swr";
 import ListItem from "../components/ListItem";
+import ThemeToggle from "../components/ThemeToggle";
 
 async function fetcher(endpoint: string) {
   const response = await fetch(endpoint);
@@ -10,12 +11,14 @@ async function fetcher(endpoint: string) {
   return json;
 }
 
-export default function Home() {
+export default function Page() {
   const { data, error, isLoading } = useSWR("/api/spotify-playing", fetcher);
 
   return (
-    <Layout>
-      <div>
+    <div className="w-full max-h-screen max-w-2xl mx-auto py-5 px-4">
+      <ThemeToggle />
+
+      <div className="flex flex-col justify-center">
         <h1 className="text-3xl font-bold cursor-default mb-8">Lauren Xie</h1>
 
         <ul className="space-y-4">
@@ -51,7 +54,7 @@ export default function Home() {
           />
         </ul>
       </div>
-    </Layout>
+    </div>
   );
 }
 
