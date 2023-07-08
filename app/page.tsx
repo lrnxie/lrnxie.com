@@ -1,8 +1,13 @@
 "use client";
 
+import React from "react";
 import useSWR from "swr";
 import ListItem from "../components/ListItem";
 import ThemeToggle from "../components/ThemeToggle";
+
+type Message = {
+  title: string;
+};
 
 async function fetcher(endpoint: string) {
   const response = await fetch(endpoint);
@@ -11,8 +16,29 @@ async function fetcher(endpoint: string) {
   return json;
 }
 
+async function postMsg(message: Message) {
+  await fetch("/api/log", {
+    method: "POST",
+    body: JSON.stringify(message),
+  });
+}
+
 export default function Page() {
   const { data, error, isLoading } = useSWR("/api/spotify-playing", fetcher);
+
+  React.useEffect(() => {
+    if (!isLoading) {
+      postMsg({
+        title: `Spotify playing: ${
+          !!error
+            ? `An error occurred: ${error}`
+            : data?.isPlaying
+            ? `${data.title} - ${data.artist}`
+            : "Not playing"
+        }`,
+      });
+    }
+  }, [isLoading, data, error]);
 
   return (
     <div className="w-full max-h-screen max-w-2xl mx-auto py-5 px-4">
