@@ -14,12 +14,12 @@ export default async function handler(
   const data = await response.json();
 
   const isPlaying = data.is_playing;
+  const track = data.item;
 
-  if (!isPlaying) {
+  if (!isPlaying || !track) {
     return res.status(200).json({ isPlaying: false });
   }
 
-  const track = data.item;
   const title = track.name;
   const artist = track.artists.map((_artist: any) => _artist.name).join(", ");
   const trackUrl = track.external_urls.spotify;
