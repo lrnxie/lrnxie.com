@@ -14,14 +14,14 @@ export default async function handler(
     return res.status(405).send('Method Not Allowed');
   }
 
-  const ip = req.headers['x-forwarded-for'];
-  const userAgent = req.headers['user-agent'];
-
   const { title } = JSON.parse(req.body);
 
   const embed = new EmbedBuilder({
     title,
-    description: `IP: ${ip}\n User agent: ${userAgent}`,
+    description: `
+      IP: ${req.headers['x-forwarded-for']}
+      User-Agent: ${req.headers['user-agent']}
+    `,
     color: 0x1d8954,
   });
 
