@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import useSWR from "swr";
-import ListItem from "../components/ListItem";
-import ThemeToggle from "../components/ThemeToggle";
+import React from 'react';
+import useSWR from 'swr';
+import ListItem from '../components/ListItem';
+import ThemeToggle from '../components/ThemeToggle';
 
 type Message = {
   title: string;
@@ -17,14 +17,14 @@ async function fetcher(endpoint: string) {
 }
 
 async function postMsg(message: Message) {
-  await fetch("/api/log", {
-    method: "POST",
+  await fetch('/api/log', {
+    method: 'POST',
     body: JSON.stringify(message),
   });
 }
 
 export default function Page() {
-  const { data, error, isLoading } = useSWR("/api/spotify-playing", fetcher);
+  const { data, error, isLoading } = useSWR('/api/spotify-playing', fetcher);
 
   React.useEffect(() => {
     if (!isLoading) {
@@ -34,7 +34,7 @@ export default function Page() {
             ? `An error occurred: ${error}`
             : data?.isPlaying
             ? `${data.title} - ${data.artist}`
-            : "Not playing"
+            : 'Not playing'
         }`,
       });
     }
@@ -72,10 +72,10 @@ export default function Page() {
             link={!error && data?.isPlaying ? data.trackUrl : null}
             title={
               isLoading
-                ? "Loading Spotify now playing..."
+                ? 'Loading Spotify now playing...'
                 : !error && data?.isPlaying
                 ? `${data.title} - ${data.artist}`
-                : "Not Playing"
+                : 'Not Playing'
             }
           />
         </ul>

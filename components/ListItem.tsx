@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement } from 'react';
 
 export default function ListItem({
   icon,
@@ -22,7 +22,7 @@ export default function ListItem({
           <a
             className="px-px border-b border-indigo-500 hover:border-b-2 transition-all ease-in-out duration-100"
             href={link}
-            target={newTab ? "_blank" : "_self"}
+            target={newTab ? '_blank' : '_self'}
             rel="noopener noreferrer"
           >
             {title}

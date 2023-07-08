@@ -1,17 +1,17 @@
-import "./globals.css";
-import { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { Providers } from "./providers";
+import './globals.css';
+import { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
+import { Providers } from './providers';
 
 export const metadata: Metadata = {
-  title: "Lauren Xie",
-  description: "",
+  title: 'Lauren Xie',
+  description: '',
 };
 
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+  subsets: ['latin'],
+  variable: '--font-inter',
 });
 
 export default function RootLayout({

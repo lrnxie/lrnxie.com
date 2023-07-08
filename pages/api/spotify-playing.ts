@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { getNowPlaying } from "../../lib/spotify";
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { getNowPlaying } from '../../lib/spotify';
 
 export default async function handler(
   req: NextApiRequest,
@@ -21,7 +21,7 @@ export default async function handler(
   }
 
   const title = track.name;
-  const artist = track.artists.map((_artist: any) => _artist.name).join(", ");
+  const artist = track.artists.map((_artist: any) => _artist.name).join(', ');
   const trackUrl = track.external_urls.spotify;
 
   return res.status(200).json({
