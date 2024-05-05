@@ -15,7 +15,9 @@ async function fetcher(endpoint: string) {
 }
 
 export default function Home() {
-  const { data, error, isLoading } = useSWR('/api/spotify-playing', fetcher);
+  const { data, error, isLoading } = useSWR('/api/spotify-playing', fetcher, {
+    refreshInterval: 1000 * 60,
+  });
 
   return (
     <main className="mx-auto max-w-2xl px-4 pb-4 pt-14">

@@ -1,5 +1,7 @@
 import { getNowPlaying } from '@/lib/spotify';
 
+export const revalidate = 60;
+
 export async function GET() {
   const nowPlayingResponse = await getNowPlaying();
 
