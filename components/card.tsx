@@ -14,7 +14,7 @@ export function Card({
   return (
     <div
       className={cn(
-        'group flex h-24 items-center justify-center rounded-xl border-2 border-neutral-900 bg-white p-4 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-1 hover:shadow-2xl',
+        'group flex h-24 items-center justify-center rounded-3xl border-2 border-b-8 border-l-8 border-neutral-900 border-b-neutral-900/90 border-l-neutral-900/90 bg-white p-4 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-1 hover:shadow-2xl',
         className
       )}
     >

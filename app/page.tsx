@@ -23,7 +23,7 @@ export default function Home() {
     <main className="mx-auto max-w-2xl px-4 pb-4 pt-14">
       <h1 className="text-3xl font-bold tracking-tight">Lauren Xie</h1>
 
-      <h2 className="mt-4 font-medium tracking-tight md:mt-6">
+      <h2 className="mt-4 font-medium tracking-tight">
         Web Developer based in Toronto, Canada
       </h2>
 
